@@ -25,7 +25,7 @@ public class MainActivity extends SimpleActivity {
         ListView listView = (ListView) findViewById(R.id.todo_list);
         listItems = new ArrayList<>(); //empty
         // make adapter
-        adapter = new ArrayAdapter<String>(this,
+        adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1,
                 listItems);
         listView.setAdapter(adapter);
@@ -42,7 +42,7 @@ public class MainActivity extends SimpleActivity {
 
         todoBox.setText("");
 
-        if(todoText.trim().length() != 0) { //so that user add blank items
+        if(todoText.trim().length() != 0) { //so that user doesn't add blank items
             listItems.add(todoText);
             adapter.notifyDataSetChanged();
         }
